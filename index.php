@@ -25,8 +25,8 @@
 
     <div class="menu">
         <div class="menu__buttons">
-            <button class="menuBtn male">Для мальчиков</button>
-            <button class="menuBtn female">Для девочек</button>
+            <button class="menuBtn male">Для мальчика</button>
+            <button class="menuBtn female">Для девочки</button>
         </div>
     </div>
 
