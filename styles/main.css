@@ -1,0 +1,268 @@
+:root {
+  --mainText: #333;
+  --mainBg: linear-gradient(to bottom, #efefef, #adadad);
+  --white: #ffffff;
+  --deviderGrey: #c1c1c1;
+  --chooseGenderPanel: transparent;
+  --maleBlue: #cad5d8;
+  --femalePink: #ebe2ea;
+  --mainWeight: 200;
+  --mainTransition: ease 0.2s;
+  --laptopNameMargin: 2.43rem 0 1.8rem 0;
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--mainText);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  height: 100%;
+  background: var(--mainBg);
+  font-family: 'Inter', sans-serif;
+  font-weight: var(--mainWeight);
+  color: var(--mainText);
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.43rem 0 2.87rem 0;
+}
+
+.name h1 a {
+  font-family: 'Inter';
+  font-weight: 300;
+  color: var(--mainText);
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.menu__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  border-radius: 15px;
+}
+
+.menuBtn {
+  flex: 0 0 49.9%;
+  height: max-content;
+  padding: 1.2rem;
+  font-family: 'Inter';
+  font-weight: var(--mainWeight);
+  font-size: 1.25rem;
+  background: #e1e1e1;
+  border: none;
+  outline: none;
+}
+
+.male,
+.female {
+  position: relative;
+  transition: var(--mainTransition);
+  z-index: 50;
+}
+
+.male:before,
+.female:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10rem;
+  transition: var(--mainTransition);
+  z-index: -1;
+  opacity: 0;
+}
+
+.male:before {
+  background: linear-gradient(165deg, #f5f5f5, #c8d4d6);
+}
+
+.female:before {
+  background: linear-gradient(165deg, #f5f5f5, #d8cad5);
+}
+
+.male:hover:before,
+.female:hover:before {
+  opacity: 1;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.mom {
+  width: 25%;
+  height: auto;
+  margin: 3% 0;
+  overflow: hidden;
+}
+
+.mom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.banner__tagline {
+  position: absolute;
+  bottom: 5%;
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 2560px) {
+  .name h1 {
+    font-size: 2.5rem;
+  }
+
+  .menuBtn {
+    padding: 1.25rem;
+    font-size: 1.25rem;
+  }
+
+  .male {
+    margin: 0 6rem 0 0;
+  }
+
+  .male,
+  .female {
+    border-radius: 10rem;
+    box-shadow: -6px -6px 12px rgba(255, 255, 255, 1),
+      -8px -8px 16px rgba(255, 255, 255, 0.9),
+      -10px -10px 20px rgba(255, 255, 255, 0.8), 6px 6px 12px rgba(0, 0, 0, 0.2),
+      10px 10px 20px rgba(0, 0, 0, 0.1);
+    transition: var(--mainTransition);
+  }
+
+  .male:active,
+  .female:active {
+    box-shadow: -3px -3px 6px rgba(255, 255, 255, 1),
+      -2px -2px 4px rgba(255, 255, 255, 0.9),
+      -2px -2px 4px rgba(255, 255, 255, 0.8), 6px 6px 12px rgba(0, 0, 0, 0.2),
+      2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .mom {
+    width: 28%;
+    margin: 3% 0 0;
+  }
+
+  .banner__tagline {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .menuBtn {
+    padding: 1.2rem;
+    font-size: 1.2rem;
+  }
+
+  .mom {
+    width: 35%;
+  }
+
+  .banner__tagline {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .name h1 {
+    font-size: 2.1rem;
+  }
+
+  .menu__buttons {
+    width: 50%;
+  }
+
+  .menuBtn {
+    font-size: 1rem;
+  }
+
+  .male {
+    margin: 0 3rem 0 0;
+  }
+
+  .mom {
+    width: 40%;
+  }
+
+  .banner__tagline {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu__buttons {
+    width: 80%;
+  }
+
+  .menuBtn {
+    padding: 0.8rem;
+  }
+
+  .male {
+    margin: 0 2rem 0 0;
+  }
+
+  .male,
+  .female {
+    border-radius: 10px;
+  }
+
+  .mom {
+    width: 65%;
+    margin: 8% 0 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .mom {
+    width: 75%;
+    margin: 12% 0 0;
+  }
+
+  .banner__tagline {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .menuBtn {
+    padding: 0.8rem 0;
+    font-size: 0.9rem;
+  }
+
+  .banner__tagline {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .banner__tagline {
+    font-size: 0.9rem;
+  }
+}
