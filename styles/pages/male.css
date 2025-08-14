@@ -1,6 +1,6 @@
 :root {
   --mainText: #333;
-  --mainBg: linear-gradient(to bottom, #efefef, #a1a8aa);
+  --maleBg: linear-gradient(to bottom, #efefef, #a1a8aa);
   --white: #ffffff;
   --deviderGrey: #c1c1c1;
   --chooseGenderPanel: transparent;
@@ -23,7 +23,7 @@ body {
 }
 
 body {
-  background: var(--mainBg);
+  background: var(--maleBg);
   font-family: 'Inter';
   font-weight: var(--mainWeight);
   color: var(--mainText);

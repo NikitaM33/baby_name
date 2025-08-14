@@ -6,8 +6,12 @@
   --chooseGenderPanel: transparent;
   --maleBlue: #cad5d8;
   --femalePink: #ebe2ea;
+  --danger: tomato;
+
   --mainWeight: 200;
+
   --mainTransition: ease 0.2s;
+
   --laptopNameMargin: 2.43rem 0 1.8rem 0;
 
   box-sizing: border-box;
@@ -27,6 +31,31 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: var(--mainWeight);
   color: var(--mainText);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.avatar {
+  width: 10rem;
+  height: 10rem;
+  margin: 0 0 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .name {
@@ -130,6 +159,69 @@ body {
   position: absolute;
   bottom: 5%;
   font-size: 1.4rem;
+}
+
+.register-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-menu__back {
+  margin-right: 5rem;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 25%;
+}
+
+input[type="file"] {
+  max-width: 14.5rem;
+}
+
+input[aria-invalid="true"] {
+  border: 1px solid var(--danger);
+}
+
+.register-form__input {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.linkTo {
+  color: var();
+  text-decoration: none;
+}
+
+.error {
+  font-weight: 400;
+  color: var(--danger);
+}
+
+.notice__error {
+  width: 100%;
+  padding: 0.3rem 0.8rem;
+  margin: 0 0 2rem;
+  background: rgba(255, 143, 143, 0.2);
+  border: 1px solid var(--danger);
+  border-radius: 5px;
+}
+
+.logout {
+  background: transparent;
+  color: var(--mainText);
+  border: none;
+  outline: none;
+}
+
+.logout:hover {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 2560px) {

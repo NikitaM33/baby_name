@@ -1,6 +1,6 @@
 :root {
   --mainText: #333;
-  --mainBg: linear-gradient(to bottom, #efefef, #aaa1a8);
+  --femaleBg: linear-gradient(to bottom, #efefef, #aaa1a8);
   --white: #ffffff;
   --deviderGrey: #c1c1c1;
   --chooseGenderPanel: transparent;
@@ -23,7 +23,7 @@ body {
 }
 
 body {
-  background: var(--mainBg);
+  background: var(--femaleBg);
   font-family: 'Inter';
   font-weight: var(--mainWeight);
   color: var(--mainText);
@@ -48,6 +48,10 @@ body {
   font-weight: 300;
   color: var(--mainText);
   text-decoration: none;
+}
+
+.header__text {
+  text-align: center;
 }
 
 .header__text h3 {

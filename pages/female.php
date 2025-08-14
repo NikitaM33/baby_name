@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/pages/female.css">
-    <title>Имена для девочек</title>
+    <title>Имя для девочки</title>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
         </div>
 
         <div class="header__text">
-            <h3>Имена для девочек</h3>
+            <h3>Имена для девочки</h3>
         </div>
     </div>
 
@@ -36,10 +36,7 @@
 
         <div class="random-name">
             <h2>Ольга</h2>
-            <div class="random-name__buttons">
-                <button class="random-name__button">Другое имя</button>
-                <button class="random-name__button">Все имена</button>
-            </div>
+            <?php include '../components/nameButtons.php'; ?>
         </div>
     </section>
 

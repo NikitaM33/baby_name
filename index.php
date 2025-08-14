@@ -16,17 +16,13 @@
 
 <body>
     <div class="header">
-        <div class="name">
-            <h1>
-                <a href="#">Baby name</a>
-            </h1>
-        </div>
+        <?php include './components/head.php'; ?>
     </div>
 
     <div class="menu">
         <div class="menu__buttons">
-            <button class="menuBtn male">Для мальчика</button>
-            <button class="menuBtn female">Для девочки</button>
+            <button class="menuBtn male">Имя для мальчика</button>
+            <button class="menuBtn female">Имя для девочки</button>
         </div>
     </div>
 
