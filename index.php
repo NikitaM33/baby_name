@@ -1,41 +1,25 @@
-<!DOCTYPE html>
-<html lang="ru">
+<?php 
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <title>Baby name</title>
-</head>
+require "./src/system/Router.php";
 
-<body>
-    <div class="header">
-        <?php include './components/head.php'; ?>
-    </div>
+$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-    <div class="menu">
-        <div class="menu__buttons">
-            <button class="menuBtn male">Имя для мальчика</button>
-            <button class="menuBtn female">Имя для девочки</button>
-        </div>
-    </div>
+$router = new Router();
 
-    <section>
-        <div class="banner">
-            <div class="mom">
-                <img src="./assets/mom-PIMPED2.png" alt="mom">
-            </div>
-            <div class="banner__tagline">
-                <p>Подберите своему ребенку особенное имя</p>
-            </div>
-        </div>
-    </section>
-</body>
+$router->add("/baby_name/", function () {
+    include "pages/main.php";
+});
 
-</html>
+$router->add("/baby_name/male", function () {
+    include "pages/male.php";
+});
+
+$router->add("/baby_name/female", function () {
+    include "pages/female.php";
+});
+
+$router->add("/baby_name/name/{id}", function ($id) {
+    echo "This is the page for name $id";
+});
+
+$router->dispatch($path);

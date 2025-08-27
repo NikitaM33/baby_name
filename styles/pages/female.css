@@ -1,6 +1,6 @@
 :root {
   --mainText: #333;
-  --femaleBg: linear-gradient(to bottom, #efefef, #aaa1a8);
+  --femaleBg: linear-gradient(to bottom, #efefef, #b9acb7b0);
   --white: #ffffff;
   --deviderGrey: #c1c1c1;
   --chooseGenderPanel: transparent;
@@ -127,7 +127,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(165deg, #cacaca, #c2b6bf);
+  background: linear-gradient(165deg, #e5e5e5, #d8cad5);
   border-radius: var(--mainRadius);
   transition: var(--mainTransition);
   z-index: -1;

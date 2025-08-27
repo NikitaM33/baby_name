@@ -65,7 +65,7 @@ body {
   margin: 2.43rem 0 2.87rem 0;
 }
 
-.name h1 a {
+.name h1 {
   font-family: 'Inter';
   font-weight: 300;
   color: var(--mainText);
@@ -91,12 +91,19 @@ body {
   flex: 0 0 49.9%;
   height: max-content;
   padding: 1.2rem;
+  text-align: center;
   font-family: 'Inter';
   font-weight: var(--mainWeight);
   font-size: 1.25rem;
+  color: var(--mainText);
+  text-decoration: none;
   background: #e1e1e1;
   border: none;
   outline: none;
+}
+
+.menuBtn:hover {
+  color: var(--mainText);
 }
 
 .male,

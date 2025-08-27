@@ -18,7 +18,7 @@
     <div class="header">
         <div class="name">
             <h1>
-                <a href="#">Baby name</a>
+                <a href="./">Baby name</a>
             </h1>
         </div>
 
@@ -30,13 +30,13 @@
     <section class="banner-section">
         <div class="banner">
             <div class="baby">
-                <img src="../assets/babyGirl-PIMPED1.png" alt="baby boy">
+                <img src="/assets/babyGirl-PIMPED1.png" alt="baby boy">
             </div>
         </div>
 
         <div class="random-name">
             <h2>Ольга</h2>
-            <?php include '../components/nameButtons.php'; ?>
+            <?php include 'components/nameButtons.php'; ?>
         </div>
     </section>
 
