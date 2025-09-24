@@ -4,7 +4,7 @@ session_start();
 
 require_once __DIR__ . '/../actions/config.php';
 
-// Ревирект
+// Редирект
 function redirect($path)
 {
     header("Location: $path");
@@ -148,5 +148,27 @@ function checkGuest()
 {
     if (isset($_SESSION['user']['id'])) {
         redirect('/baby_name/admin/control.php');
+    }
+}
+
+// Запрос имен в БД
+function randomMaleName()
+{
+    $names = [];
+    $pdo = getPDO();
+
+    $query = "SELECT * FROM `male`";
+    $stmt = $pdo->prepare($query);
+
+    try {
+        $stmt->execute();
+        $names = $stmt->fetchAll();
+        $name = '';
+
+        $name = $names[rand(0, 12)][1];
+
+        echo $name;
+    } catch (Exception $e) {
+        die($e->getMessage());
     }
 }

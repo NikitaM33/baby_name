@@ -99,6 +99,12 @@ body {
   text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
 }
 
+.random-name__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .random-name__button {
   position: relative;
   margin: 1rem;

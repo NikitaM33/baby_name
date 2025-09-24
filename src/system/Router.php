@@ -9,6 +9,7 @@ class Router
         $this->routes[$path] = $handler;
     }
 
+    // 404 Page
     public function dispatch(string $path): void
     {
         foreach ($this->routes as $route => $handler) {

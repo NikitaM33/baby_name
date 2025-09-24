@@ -1,3 +1,8 @@
+<?php
+include_once __DIR__ . '/../src/helpers/helpers.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -35,8 +40,11 @@
         </div>
 
         <div class="random-name">
-            <h2>Александр</h2>
-            <?php include 'components/nameButtons.php'; ?>
+            <h2 class="randName"></h2>
+            <div class="random-name__buttons">
+                <button class="random-name__button">Все имена</button>
+                <button id="anotherMaleName" class="random-name__button">Другое имя</button>
+            </div>
         </div>
     </section>
 
@@ -68,6 +76,8 @@
     </section>
 
 
+    <script type="module" src="../src/js/maleNames.js"></script>
 </body>
+
 
 </html>

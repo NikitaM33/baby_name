@@ -36,7 +36,10 @@
 
         <div class="random-name">
             <h2>Ольга</h2>
-            <?php include 'components/nameButtons.php'; ?>
+            <div class="random-name__buttons">
+                <button class="random-name__button">Все имена</button>
+                <button id="anotherFemaleName" class="random-name__button">Другое имя</button>
+            </div>
         </div>
     </section>
 
