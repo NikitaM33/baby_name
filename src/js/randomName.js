@@ -1,4 +1,4 @@
-let randName = document.querySelector('.randName');
+let randName = document.querySelector('.random-name__name');
 
 export let randomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min)) + min;

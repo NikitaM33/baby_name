@@ -10,6 +10,7 @@
   --mainRadius: 4.8rem;
   --mainTransition: ease 0.2s;
   --laptopNameMargin: 2.43rem 0 1.8rem 0;
+  --transition-speed: 0.3s;
 
   box-sizing: border-box;
   margin: 0;
@@ -92,8 +93,12 @@ body {
   text-align: center;
 }
 
-.random-name h2 {
+.random-name__name-box {
+  height: 3rem;
   margin-bottom: 3rem;
+}
+
+.random-name__name {
   font-weight: var(--mainWeight);
   font-size: 3.5rem;
   text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
@@ -155,6 +160,19 @@ body {
   margin: 0;
 }
 
+.origin__accordion {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.origin__accordion-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
 .origin-name {
   display: flex;
   justify-content: center;
@@ -171,12 +189,16 @@ body {
 
 .origin-tale {
   max-width: 50%;
+  max-height: 0;
   margin: 0 0 8rem 0;
+  padding: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-speed) ease padding var(--transition-speed);
 }
 
 .origin-tale p {
-    font-size: 1.8rem;
-  }
+  font-size: 1.8rem;
+}
 
 @media screen and (max-width: 2560px) {
   .name h1 {
@@ -259,7 +281,7 @@ body {
 @media screen and (max-width: 1440px) {
   .name h1 {
     font-size: 2.3rem;
-  } 
+  }
 
   .banner-section {
     margin: 0 0 2rem 0;
@@ -268,7 +290,7 @@ body {
   .baby {
     width: 21%;
   }
-  
+
   .random-name {
     margin: -6rem 0 0 0;
   }

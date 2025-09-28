@@ -1,21 +1,22 @@
 import { getNames } from './randomName.js';
 import { randomInt } from './randomName.js';
 
-let anotherMaleName = document.querySelector('#anotherMaleName');
-let randName = document.querySelector('.randName');
-
 window.addEventListener('load', async function () {
-  await getNames('Male');
-});
+  let anotherMaleName = document.querySelector('#anotherMaleName');
+  let randName = document.querySelector('.random-name__name');
+  let maleNames = '';
 
-let randomName = () => {
+  await getNames('Male');
+
   if (localStorage.getItem('names')) {
-    let maleNames = JSON.parse(localStorage.getItem('names'));
+    maleNames = JSON.parse(localStorage.getItem('names'));
+  }
+
+  let randomName = () => {
     let randomNum = randomInt(1, maleNames.length);
 
     randName.innerText = maleNames[randomNum].name;
-  }
-};
+  };
 
-anotherMaleName.addEventListener('click', randomName);
-
+  anotherMaleName.addEventListener('click', randomName);
+});
