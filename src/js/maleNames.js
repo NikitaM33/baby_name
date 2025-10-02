@@ -4,7 +4,12 @@ import { randomInt } from './randomName.js';
 window.addEventListener('load', async function () {
   let anotherMaleName = document.querySelector('#anotherMaleName');
   let randName = document.querySelector('.random-name__name');
+  let originName = document.querySelector('.origin-name');
+  let accordionItem = document.querySelector('.origin__accordion-item');
+  let orirginTale = document.querySelector('.origin-tale');
+  let chevron = document.querySelector('.origin-name__chevron');
   let maleNames = '';
+  let offset = 10; // отступ при раскрытии аккордиона
 
   await getNames('Male');
 
@@ -19,4 +24,11 @@ window.addEventListener('load', async function () {
   };
 
   anotherMaleName.addEventListener('click', randomName);
+
+  originName.addEventListener('click', () => {
+    const isActive = accordionItem.classList.contains('active'); // проверка активен ли айтем
+
+    orirginTale.classList.toggle('active');
+    chevron.classList.toggle('active');
+  });
 });
