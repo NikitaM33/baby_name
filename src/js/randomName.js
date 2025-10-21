@@ -1,4 +1,8 @@
 let randName = document.querySelector('.random-name__name');
+let accordionText = document.querySelector('.origin-tale__text');
+
+let names = [];
+let currentName = '';
 
 export let randomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -7,16 +11,28 @@ export let randomInt = (min, max) => {
 export let getNames = async (gender) => {
   try {
     let response = await fetch(`/src/helpers/api${gender}.php`);
-    let names = await response.json();
+    names = await response.json();
 
     if (response.ok) {
-      let randomNum = randomInt(1, names.length)
+      let randomNum = randomInt(0, names.length);
 
-      randName.innerText = names[randomNum].name;
+      currentName = names[randomNum].name;
+      randName.innerText = currentName;
+
       localStorage.removeItem('names');
       localStorage.setItem('names', JSON.stringify(names));
+
+      getOrigin(currentName);
     }
   } catch (error) {
-    console.error('Не удалось получить получить список имен. ', error);
+    console.error('Не удалось получить список имен. ', error);
   }
+};
+
+export let getOrigin = async (name) => {
+  names.forEach((elem) => {
+    if (elem.name == name) {
+      accordionText.innerText = elem.origin;
+    }
+  });
 };
