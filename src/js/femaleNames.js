@@ -2,33 +2,34 @@ import { getNames, randomInt, getOrigin } from './randomName.js';
 import { getNamesFromStorage, toggleOriginAccordion } from './namesHandler.js';
 
 window.addEventListener('load', async function () {
-  let anotherMaleName = document.querySelector('#anotherMaleName');
+  let anotherFemaleName = document.querySelector('#anotherFemaleName');
   let randName = document.querySelector('.random-name__name');
   let originName = document.querySelector('.origin-name');
   let orirginTale = document.querySelector('.origin-tale');
   let chevron = document.querySelector('.origin-name__chevron');
-  let maleNames = [];
+  let femaleNames = [];
   let currentName = '';
 
-  // Запрос в БД мужских имен
-  await getNames('Male');
+  // Запрос в БД женских имен
+  await getNames('Female');
 
   // Берет из локалсторидж имена
-  maleNames = getNamesFromStorage();
+  femaleNames = getNamesFromStorage();
 
   // Подставляет рандомное имя
   let randomName = () => {
-    let randomNum = randomInt(0, maleNames.length);
+    let randomNum = randomInt(0, femaleNames.length);
 
-    currentName = maleNames[randomNum].name;
+    currentName = femaleNames[randomNum].name;
     randName.innerText = currentName;
 
     getOrigin(currentName);
   };
 
   // Обновляет имя
-  anotherMaleName.addEventListener('click', randomName);
+  anotherFemaleName.addEventListener('click', randomName);
 
   // Toggle на историю имени
   toggleOriginAccordion(originName, orirginTale, chevron);
+
 });
